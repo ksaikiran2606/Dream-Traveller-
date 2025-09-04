@@ -117,9 +117,9 @@ const handleCancelBooking = useCallback(async (bookingId) => {
   try {
     setCancellingId(bookingId);
 
+    // ✅ Correct API endpoint (adjust according to your backend routes)
     const response = await axios.delete(
-      `axios.post("https://your-backend.onrender.com/cancel", data)
-/booking/${bookingId}/`,
+      `https://dream-traveller-backend.onrender.com/booking/${bookingId}/`,
       {
         headers: {
           Authorization: `Token ${token}`,
@@ -129,13 +129,15 @@ const handleCancelBooking = useCallback(async (bookingId) => {
 
     if (response.data.message) {
       alert(response.data.message);
-      
-      // Update the specific booking with the response data
-      setBookings(prev => prev.map(booking => 
-        booking.id === bookingId 
-          ? {...booking, status: response.data.status} 
-          : booking
-      ));
+
+      // ✅ Update status in state
+      setBookings((prev) =>
+        prev.map((booking) =>
+          booking.id === bookingId
+            ? { ...booking, status: response.data.status }
+            : booking
+        )
+      );
     }
   } catch (error) {
     if (error.response?.status === 404) {
