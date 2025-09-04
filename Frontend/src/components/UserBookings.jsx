@@ -118,7 +118,8 @@ const handleCancelBooking = useCallback(async (bookingId) => {
     setCancellingId(bookingId);
 
     const response = await axios.delete(
-      `http://127.0.0.1:8000/booking/${bookingId}/`,
+      `axios.post("https://your-backend.onrender.com/cancel", data)
+/booking/${bookingId}/`,
       {
         headers: {
           Authorization: `Token ${token}`,
