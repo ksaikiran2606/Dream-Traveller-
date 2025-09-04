@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-52%-s$tlpnljr1)(_70y!@+(n(x)75l##l+b(*j2$@f5l^3#@y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["dream-traveller-backend.onrender.com"]
 
 
 # Application definition
