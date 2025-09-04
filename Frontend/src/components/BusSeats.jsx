@@ -15,7 +15,7 @@ const BusSeats = ({ token }) => {
     const fetchBusesDetails = async () => {
       try {
         setIsLoading(true);
-        const response = await axios(`http://127.0.0.1:8000/buses/${busId}`);
+        const response = await axios(`https://dream-traveller-backend.onrender.com/buses/${busId}`);
         setBus(response.data);
         setSeats(response.data.seats || []);
       } catch (error) {
@@ -35,7 +35,7 @@ const BusSeats = ({ token }) => {
     }
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/booking/",
+        "https://dream-traveller-backend.onrender.com/booking/",
         { seat: seatId },
         {
           headers: {

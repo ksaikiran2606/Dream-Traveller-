@@ -27,7 +27,7 @@ const UserBookings = ({ token, userId }) => {
       }, 10000); // 10 second timeout
 
       const response = await axios.get(
-        `http://127.0.0.1:8000/user/${userId}/bookings/`,
+        `https://dream-traveller-backend.onrender.com/user/${userId}/bookings/`,
         {
           headers: {
             Authorization: `Token ${token}`,

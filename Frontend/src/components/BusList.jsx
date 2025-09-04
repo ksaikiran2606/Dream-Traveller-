@@ -9,7 +9,7 @@ const BusList = () => {
   useEffect(() => {
     const fetchBuses = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/buses/");
+        const response = await axios.get("https://dream-traveller-backend.onrender.com/buses/");
         setBuses(response.data);
       } catch (error) {
         console.log("error in fetching buses", error);

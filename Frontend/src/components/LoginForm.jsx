@@ -19,7 +19,7 @@ const LoginForm = ({ onLogin }) => {
     setMessage('');
     
     try {
-      const response = await axios.post('http://localhost:8000/login/', form, {
+      const response = await axios.post('https://dream-traveller-backend.onrender.com/login/', form, {
         headers: { 'Content-Type': 'application/json' },
       });
 
